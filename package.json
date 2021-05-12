@@ -1,13 +1,19 @@
 {
-	"name": "rails-go-to-test",
-	"displayName": "Rails go to test",
+	"name": "jp-go-to-test",
+	"displayName": "JP go to test",
 	"description": "Switch between code and test files in Rails",
 	"version": "0.0.3",
-	"publisher": "SimonBo",
-	"keywords": ["rails", "minitest", "go to test", "rails-go-to-test", "ruby"],
+	"publisher": "JoseFarias",
+	"keywords": [
+		"rails",
+		"minitest",
+		"go to test",
+		"rails-go-to-test",
+		"ruby"
+	],
 	"repository": {
 		"type": "git",
-    "url": "https://github.com/SimonBo/rails-go-to-test"
+		"url": "https://github.com/SimonBo/rails-go-to-test"
 	},
 	"engines": {
 		"vscode": "^1.45.0"
@@ -16,22 +22,24 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:extension.goToTest"
+		"onCommand:extension.jpGoToTest"
 	],
 	"main": "./extension.js",
 	"contributes": {
-		"commands": [{
-            "command": "extension.goToTest",
-            "title": "Go to test"
-		}],
+		"commands": [
+			{
+				"command": "extension.jpGoToTest",
+				"title": "Go to test"
+			}
+		],
 		"keybindings": [
-      {
-        "command": "extension.goToTest",
-        "key": "ctrl+shift+t",
-        "mac": "cmd+shift+t",
-        "when": "editorTextFocus"
-      }
-    ]
+			{
+				"command": "extension.jpGoToTest",
+				"key": "ctrl+shift+alt+t",
+				"mac": "ctrl+shift+alt+cmd+t",
+				"when": "editorTextFocus"
+			}
+		]
 	},
 	"scripts": {
 		"lint": "eslint .",
@@ -39,18 +47,17 @@
 		"test": "node ./test/runTest.js"
 	},
 	"dependencies": {
-    "mkdirp": "^0.5.1"
-  },
+		"mkdirp": "^0.5.1"
+	},
 	"devDependencies": {
-        "@types/vscode": "^1.45.0",
-        "@types/glob": "^7.1.1",
-        "@types/mocha": "^7.0.2",
-        "@types/node": "^13.11.0",
-        "eslint": "^6.8.0",
-        "glob": "^7.1.6",
+		"@types/vscode": "^1.45.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
 		"mocha": "^7.1.2",
-        "typescript": "^3.8.3",
-        "vscode-test": "^1.3.0"
-    }
-
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	}
 }

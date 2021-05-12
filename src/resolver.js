@@ -25,6 +25,11 @@ function codeToSpec(file) {
 
 	file = file.replace('.rb', '_test.rb');
 
+	let isAppLibFile = file.indexOf('/app/lib/') > -1;
+	if (isAppLibFile) {
+		return file.replace('/app/lib/', '/test/lib/');
+	}
+
 	let isLibFile = file.indexOf('/lib/') > -1;
 	if (isLibFile) {
 		return file.replace('/lib/', '/test/lib/');
@@ -45,9 +50,9 @@ function specToCode(file) {
 
 	file = file.replace('_test.rb', '.rb');
 
-	let isLibFile = file.indexOf('/test/lib/') > -1;
-	if (isLibFile) {
-		return file.replace('/test/lib/', '/lib/');
+	let isAppLibFile = file.indexOf('/test/lib/') > -1;
+	if (isAppLibFile) {
+		return file.replace('/test/lib/', '/app/lib/');
 	}
 
 	return file.replace('/test/', '/app/');
